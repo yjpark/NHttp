@@ -149,10 +149,12 @@ namespace NHttp
         /// </summary>
         /// <param name="requestedType">The Type of the object that the new ObjRef will reference.</param>
         /// <returns>n/a</returns>
+        /* YJ Park Changes Begin
         public override ObjRef CreateObjRef(Type requestedType)
         {
             throw new NotSupportedException();
         }
+           YJ Park Changes End */
 
         /// <summary>
         /// Waits for the pending asynchronous read to complete.
@@ -195,10 +197,12 @@ namespace NHttp
         /// Throws a NotSupportedException.
         /// </summary>
         /// <returns>n/a</returns>
+        /* YJ Park Changes Begin
         public override object InitializeLifetimeService()
         {
             throw new NotSupportedException();
         }
+           YJ Park Changes End */
 
         /// <summary>
         /// Returns the length of the underlying stream.
