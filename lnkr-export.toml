@@ -1,0 +1,5 @@
+[ext-nhttp]
+[[ext-nhttp.files]]
+from = "NHttp"
+to = "${ext-root}/_NHttp"
+include = "*.cs"
