@@ -18,7 +18,11 @@ namespace NHttp
         public HttpTimeoutManager(HttpServer server)
         {
             if (server == null)
+                /* YJ Park Change Begin
                 throw new ArgumentNullException(nameof(server));
+                 */
+                throw new ArgumentNullException("server");
+                /* YJ Park Change End */
 
             ReadQueue = new TimeoutQueue(server.ReadTimeout);
             WriteQueue = new TimeoutQueue(server.WriteTimeout);
@@ -88,9 +92,17 @@ namespace NHttp
             public void Add(IAsyncResult asyncResult, IDisposable disposable)
             {
                 if (asyncResult == null)
+                    /* YJ Park Change Begin
                     throw new ArgumentNullException(nameof(asyncResult));
+                     */
+                    throw new ArgumentNullException("asyncResult");
+                    /* YJ Park Change End */
                 if (disposable == null)
+                    /* YJ Park Change Begin
                     throw new ArgumentNullException(nameof(disposable));
+                     */
+                    throw new ArgumentNullException("disposable");
+                    /* YJ Park Change End */
 
                 lock (_syncRoot)
                 {
@@ -123,7 +135,11 @@ namespace NHttp
             public TimeoutItem(long expires, IAsyncResult asyncResult, IDisposable disposable)
             {
                 if (asyncResult == null)
+                    /* YJ Park Change Begin
                     throw new ArgumentNullException(nameof(asyncResult));
+                     */
+                    throw new ArgumentNullException("asyncResult");
+                    /* YJ Park Change End */
 
                 Expires = expires;
                 AsyncResult = asyncResult;
